@@ -11,6 +11,11 @@ class Course:
         self.course_level = level
         Course.Course_id += 1
 
+    def report2(self):
+        print(f'Course Name : {self.course_name} ')
+        print(f'Course ID : {self.course_id} ')
+        print(f'Course Level : {str(self.course_level)} ')
+
 
 class Student:
     Student_id = 0
@@ -35,9 +40,9 @@ class Student:
 
                 else:
                     print('Course level not match with Student level !!\n😂😂😂')
-            if count2 != 1:
-                print('This course is not exist !!\n😂😂😂')
-                count2 = 0
+        if count2 != 1:
+            print('This course is not exist !!\n😂😂😂')
+            count2 = 0
 
     def report(self):
         print(f'Student Name : {self.Student_name} ')
@@ -54,7 +59,7 @@ boola = True
 while boola:
     try:
         xx = int(input(
-            'Student Course Management System Menu:\n1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Exit\nChoose number from menu : '))
+            'Student Course Management System Menu:\n1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Display all courses\n8. Exit\nChoose number from menu : '))
         while True:
             if xx == 1:
                 print('_____________________________')
@@ -70,7 +75,7 @@ while boola:
                 print('_____________________________')
 
                 print(
-                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Exit')
+                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Display all courses\n8. Exit')
                 xx = int(input('choice : '))
 
 
@@ -93,7 +98,7 @@ while boola:
                 print('_____________________________')
 
                 print(
-                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Exit')
+                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Display all courses\n8. Exit')
 
                 xx = int(input('choice : '))
 
@@ -122,7 +127,7 @@ while boola:
                 print('_____________________________')
 
                 print(
-                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Exit')
+                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Display all courses\n8. Exit')
 
                 xx = int(input('choice : '))
 
@@ -133,12 +138,14 @@ while boola:
                     print('there is no any student !!!')
                     print('_____________________________')
                 else:
+                    print('Display for all students')
+                    print('_____________________________')
                     for i in Studentslist:
                         i.report()
                         print('_____________________________')
 
                 print(
-                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Exit')
+                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Display all courses\n8. Exit')
 
                 xx = int(input('choice : '))
 
@@ -154,7 +161,7 @@ while boola:
                     print(f'This level {level} is invalid 😂😂😂😂😂')
                 print('_____________________________')
                 print(
-                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Exit')
+                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Display all courses\n8. Exit')
 
                 xx = int(input('choice : '))
 
@@ -178,30 +185,47 @@ while boola:
                     print('_____________________________')
 
                 print(
-                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Exit')
+                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Display all courses\n8. Exit')
 
                 xx = int(input('choice : '))
 
 
             elif xx == 7:
                 print('_____________________________')
+                if len(Courseslist) == 0:
+                    print('there is no any courses !!!')
+                    print('_____________________________')
+                else:
+                    print('Display for all courses')
+                    print('_____________________________')
+                    for i in Courseslist:
+                        i.report2()
+                        print('_____________________________')
+
+                print(
+                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Display all courses\n8. Exit')
+
+                xx = int(input('choice : '))
+
+            elif xx == 8:
+                print('_____________________________')
                 print('Welcome to ahmad program 😁😁')
                 boola = False
                 break
-            else :
+            else:
                 print('_____________________________')
                 print('invalid input please try again ')
                 print('_____________________________')
 
                 print(
-                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Exit')
+                    '1. Add New Student\n2. Remove Student\n3. Edit Student\n4. Display all students\n5. Create new Course\n6. Add Course to student\n7. Display all courses\n8. Exit')
 
                 xx = int(input('choice : '))
 
 
     except IndexError:
-     print('invalid input !!!\nTry again')
-     print('_____________________________')
+        print('invalid input !!!\nTry again')
+        print('_____________________________')
     except Exception as error:
-     print(f'Unexpected {error}, {type(error)}\nTry again')
-     print('_____________________________')
+        print(f'Unexpected {error}, {type(error)}\nTry again')
+        print('_____________________________')
